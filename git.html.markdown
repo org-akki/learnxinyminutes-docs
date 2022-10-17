@@ -102,7 +102,7 @@ to Git Database yet
 * Staged - Marks a modified file to go into your next commit snapshot
 * Committed - Files have been committed to the Git Database
 
-### Conceptual Resources
+### Conceptual Resources (with diagrams)
 
 * [Git For Computer Scientists](http://eagain.net/articles/git-for-computer-scientists/)
 * [Git For Designers](http://hoth.entp.com/output/git_for_designers.html)
@@ -131,6 +131,10 @@ $ git config --global user.name "My Name"
 $ git config --global user.email
 $ git config --global user.name
 ```
+These can be set on three different levels:
+`--system` : configs for the whole system including all user,
+`--global` : configs for current user
+`--local`  : configs for current repository
 
 [Learn More About git config.](http://git-scm.com/docs/git-config)
 
@@ -149,6 +153,9 @@ $ git help -a
 # Command specific help - user manual
 # git help <command_here>
 $ git help add
+# OR for shorthand 
+$ git add -h
+
 $ git help commit
 $ git help init
 # or git <command_here> --help
