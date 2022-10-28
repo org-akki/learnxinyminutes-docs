@@ -141,25 +141,25 @@ These can be set on three different levels:
 ### help
 
 To give you quick access to an extremely detailed guide of each command. Or to
-just give you a quick reminder of some semantics.
+just give you a quick reminder of some semantics. There are several ways for it, as highlighted.
 
 ```bash
 # Quickly check available commands
 $ git help
 
 # Check all available commands
-$ git help -a
+**$ git help -a**
 
 # Command specific help - user manual
 # git help <command_here>
-$ git help add
+**$ git help add**
 # OR for shorthand 
-$ git add -h
+**$ git add -h**
 
 $ git help commit
 $ git help init
 # or git <command_here> --help
-$ git add --help
+**$ git add --help**
 $ git commit --help
 $ git init --help
 ```
@@ -182,6 +182,9 @@ and the current HEAD commit.
 ```bash
 # Will display the branch, untracked files, changes and other differences
 $ git status
+
+# To get detailed status use -v (verbose)
+$ git status -v
 
 # To learn other "tid bits" about git status
 $ git help status
@@ -212,7 +215,8 @@ working directory/repo.
 ### branch
 
 Manage your branches. You can view, edit, create, delete branches using this
-command.
+command. 
+*** In some sense branches are similar to tags where the "HEAD" tag moves automaticly with every commit.
 
 ```bash
 # list existing branches & remotes
@@ -233,6 +237,12 @@ $ git branch myBranchName --edit-description
 ```
 
 ### tag
+
+Git supports two types of tags: lightweight and annotated.
+
+A lightweight tag is very much like a branch that doesn’t change — it’s just a pointer to a specific commit.
+
+Annotated tags, however, are stored as full objects in the Git database. They’re checksummed; contain the tagger name, email, and date; have a tagging message; and can be signed and verified with GNU Privacy Guard (GPG).
 
 Manage your tags
 
@@ -317,6 +327,15 @@ $ git commit --amend -m "Correct message"
 
 Shows differences between a file in the working directory, index and commits.
 
+
+
+| Description |Staged | Working Tree | File Names |
+| --- | ---| ---| ---|
+| Added | A | | index.htm |
+| Modified | M | M | style.css |
+| Untracked | ? | ? | script.js |
+
+
 ```bash
 # Show difference between your working dir and the index
 $ git diff
@@ -357,6 +376,13 @@ Google is your friend; for more examples
 ### log
 
 Display commits to the repository.
+There are several options to for the output and get the exact details. Such as:
+
+-S : short logs
+-ful : detailed logs
+-fully: complete details
+
+** also can be formatted in different ways. See [git docs](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History) for details.
 
 ```bash
 # Show all commits
